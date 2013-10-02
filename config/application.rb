@@ -4,6 +4,9 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+PROJECTS = YAML.load(File.read(File.expand_path('config/projects.yml')))
+PROJECTS.symbolize_keys!
+
 Bundler.require(:default, Rails.env)
 
 module FirstApp
